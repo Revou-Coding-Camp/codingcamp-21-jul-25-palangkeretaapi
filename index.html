@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List - Yama</title>
 
-    <!-- CSS External -->
+    
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Tailwind CSS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -42,10 +42,11 @@
             </div>
         </form>
 
-        <!-- List Todo -->
+        
         <section>
             <div class="action-container pt-[16px] pb-[16px]">
-                <button class="px-[26px] py-[4px] rounded-[8px] bg-gray-500 text-white">Filter</button>
+                <button type="button" class="px-[26px] py-[4px] rounded-[8px] bg-gray-500 text-white"
+                    onclick="completeTask();">Filter</button>
                 <button type="button" class="px-[26px] py-[4px] rounded-[8px] bg-red-500 text-white"
                     onclick="removeAllTask();">Delete All</button>
             </div>
@@ -60,7 +61,7 @@
         </section>
     </main>
 
-    <!-- Javascript External -->
+    
     <script src="js/script.js"></script>
 </body>
 

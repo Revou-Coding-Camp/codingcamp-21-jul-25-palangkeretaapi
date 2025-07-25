@@ -36,12 +36,12 @@ function removeAllTask() {
 }
 
 function toggleFilter() {
-    // Function to toggle the filter
+    
 }
 
 function completeTask(index) {
-    // Function to mark a task as completed
-    tasks[index].completed = true;
+    
+    tasks[index].completed = false;
 }
 
 function renderTasks() {
