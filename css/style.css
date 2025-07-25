@@ -6,12 +6,13 @@ main {
 }
 
 form {
-    background-color: #8B8DFF;
+    background-color: #1E293B;
     padding: 16px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    color: #94A3B8;
 }
 
 .action-container {
@@ -27,21 +28,21 @@ li {
     height: 200px;
     overflow-y: auto;
     padding: 10px;
-    border: 1px solid #2E3A59;
+    border: 1px solid #e5e7eb;
     border-radius: 8px;
+    color: #94A3B8;
+    background-color: #1E293B;
+    
 }
 
 header {
     text-align: center;
     margin-bottom: 20px;
-    color: #DCDCDC;
-}
-
-html {
-    background-color: 	#0E1323;
 }
 
 div {
     box-sizing: border-box;
-    border-radius: 2px;
+    background-color: #334155;
+    border-radius: 20px;
+    padding: 20px;
 }
