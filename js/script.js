@@ -2,6 +2,7 @@ console.log("Hello, World!");
 
 // This is a simple JavaScript file for a Todo List application
 let tasks = [];
+let showOnlyNotCompleted = false;
 
 function addTask() {
     // Function to add a task
@@ -36,28 +37,42 @@ function removeAllTask() {
 }
 
 function toggleFilter() {
-    
+    showOnlyNotCompleted = !showOnlyNotCompleted;
+    renderTasks();
 }
+
 
 function completeTask(index) {
-    
-    tasks[index].completed = false;
+    tasks[index].completed = true;
+    renderTasks();
 }
 
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    renderTasks();
+}
+
+
 function renderTasks() {
-    // Function to render tasks on the page
     const taskList = document.getElementById("todo-list");
-    taskList.innerHTML = ""; // Clear the current list
+    taskList.innerHTML = ""; // Kosongkan daftar
 
     tasks.forEach((task, index) => {
+        // Filter: jika hanya ingin menampilkan yang belum selesai
+        if (showOnlyNotCompleted && task.completed) {
+            return; // Skip task yang sudah selesai
+        }
+
         taskList.innerHTML += `
-        <li class="todo-item flex justify-between items-center bg-white p-4 mb-2">
-                    <span>${task.title}</span>
-                    <div>
-                        <button type="button" class="px-[10px] py-[2px] bg-green-500 text-white rounded-md" onclick="completeTask(${index});">Complete</button>
-                        <button class="px-[10px] py-[2px] bg-red-500 text-white rounded-md">Delete</button>
-                    </div>
-                </li>
+            <li class="todo-item flex justify-between items-center bg-white p-4 mb-2">
+                <span ${task.completed ? 'style="text-decoration: line-through;"' : ''}>
+                    ${task.title}
+                </span>
+                <div>
+                    <button type="button" class="px-[10px] py-[2px] bg-green-500 text-white rounded-md" onclick="completeTask(${index});">Complete</button>
+                    <button class="px-[10px] py-[2px] bg-red-500 text-white rounded-md" onclick="deleteTask(${index});">Delete</button>
+                </div>
+            </li>
         `;
     });
 }
